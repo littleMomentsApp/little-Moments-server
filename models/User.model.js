@@ -18,6 +18,8 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Name is required."],
     },
+    lists: [{ type: Schema.Types.ObjectId, ref: "List" }],
+    //owner will be added afterwards
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
