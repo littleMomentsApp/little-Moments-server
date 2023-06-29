@@ -37,7 +37,7 @@ router.get("/lists", (req, res, next) => {
     });
 });
 
-router.get("/lists/:listId", isAuthenticated, (req, res, next) => {
+router.get("/lists/:listId", (req, res, next) => {
   const { listId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(listId)) {
