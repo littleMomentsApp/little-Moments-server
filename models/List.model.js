@@ -1,18 +1,17 @@
-const { text } = require("express");
 const { Schema, model } = require("mongoose");
 
 const listSchema = new Schema(
   {
     title: {
-      type: text,
+      type: String,
     },
     description: {
-      type: text,
+      type: String,
     },
     date: {
       type: Date,
     },
-    products: [{ type: Schema.Types.ObjectId, ref: "Product" }],
+    product: [{ type: Schema.Types.ObjectId, ref: "Product" }],
 
     owner: { type: Schema.Types.ObjectId, ref: "User" },
   },

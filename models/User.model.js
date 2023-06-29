@@ -6,6 +6,7 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: [true, "Email is required."],
+      match: [/^\S+@\S+\.\S+$/, "Please use a valid email address."],
       unique: true,
       lowercase: true,
       trim: true,
@@ -18,8 +19,6 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Name is required."],
     },
-    lists: [{ type: Schema.Types.ObjectId, ref: "List" }],
-    //owner will be added afterwards
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

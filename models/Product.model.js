@@ -3,14 +3,14 @@ const { Schema, model } = require("mongoose");
 
 const productSchema = new Schema(
   {
-    name: {
-      type: text,
+    title: {
+      type: String,
     },
-    imagem: {
-      type: text,
+    image: {
+      type: String,
     },
     description: {
-      type: text,
+      type: String,
     },
     price: { type: Number },
   },
