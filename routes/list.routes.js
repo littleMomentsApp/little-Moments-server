@@ -7,17 +7,11 @@ const Product = require("../models/Product.model");
 const { isAuthenticated } = require("../middleware/jwt.middleware");
 
 router.post("/lists", isAuthenticated, (req, res, next) => {
-  const { title, description, date } = req.body;
+  const { title, description, date, products } = req.body;
 
-  const newList = {
-    title: title,
-    description: description,
-    date: date,
-    products: [],
-    //owner: req.payload._id,
-  };
+  //owner: req.payload._id,
 
-  List.create(newList)
+  List.create({ title, description, date, products })
     .then((response) => res.status(201).json(response))
     .catch((err) => {
       console.log("error creating a new list", err);
