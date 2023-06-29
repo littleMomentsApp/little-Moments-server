@@ -6,7 +6,7 @@ const User = require("../models/User.model");
 const Product = require("../models/Product.model");
 const { isAuthenticated } = require("../middleware/jwt.middleware");
 
-router.post("/lists", (req, res, next) => {
+router.post("/lists", isAuthenticated, (req, res, next) => {
   const { title, description, date } = req.body;
 
   const newList = {
@@ -43,7 +43,7 @@ router.get("/lists", (req, res, next) => {
     });
 });
 
-router.get("/lists/:listId", (req, res, next) => {
+router.get("/lists/:listId", isAuthenticated, (req, res, next) => {
   const { listId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(listId)) {
@@ -63,7 +63,7 @@ router.get("/lists/:listId", (req, res, next) => {
     });
 });
 
-router.put("/lists/:listId", (req, res, next) => {
+router.put("/lists/:listId", isAuthenticated, (req, res, next) => {
   const { listId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(listId)) {
@@ -89,7 +89,7 @@ router.put("/lists/:listId", (req, res, next) => {
     });
 });
 
-router.delete("/lists/:listId", (req, res, next) => {
+router.delete("/lists/:listId", isAuthenticated, (req, res, next) => {
   const { listId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(listId)) {
