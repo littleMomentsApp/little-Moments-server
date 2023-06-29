@@ -63,7 +63,7 @@ router.get("/lists/:listId", isAuthenticated, (req, res, next) => {
     });
 });
 
-router.put("/lists/:listId", isAuthenticated, (req, res, next) => {
+router.put("/lists/edit/:listId", isAuthenticated, (req, res, next) => {
   const { listId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(listId)) {
