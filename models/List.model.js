@@ -11,7 +11,7 @@ const listSchema = new Schema(
     date: {
       type: Date,
     },
-    product: [{ type: Schema.Types.ObjectId, ref: "Product" }],
+    products: [{ type: Schema.Types.ObjectId, ref: "Product" }],
 
     owner: { type: Schema.Types.ObjectId, ref: "User" },
   },

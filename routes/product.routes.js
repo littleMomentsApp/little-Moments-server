@@ -3,7 +3,7 @@ const router = require("express").Router();
 const Product = require("../models/Product.model");
 const List = require("../models/List.model");
 
-router.post("/product", (req, res, next) => {
+router.post("/products", (req, res, next) => {
   const { title, description, image, price } = req.body;
 
   const newProduct = {
