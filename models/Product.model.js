@@ -11,6 +11,11 @@ const productSchema = new Schema(
     description: {
       type: String,
     },
+    category: {
+      type: String,
+      enum: ["Hygiene", "Baby Essentials", "Clothing", "Feeding", "Other"],
+      default: "Other",
+    },
     price: { type: Number },
   },
   {
