@@ -24,4 +24,18 @@ router.post("/products", (req, res, next) => {
     });
 });
 
+router.get("/products", (req, res, next) => {
+  Product.find()
+    .then((products) => {
+      res.json(products);
+    })
+    .catch((err) => {
+      console.log("error getting the products", err);
+      res.status(500).json({
+        message: "error getting the products",
+        error: err,
+      });
+    });
+});
+
 module.exports = router;

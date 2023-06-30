@@ -9,9 +9,9 @@ const { isAuthenticated } = require("../middleware/jwt.middleware");
 router.post("/lists", isAuthenticated, (req, res, next) => {
   const { title, description, date, products } = req.body;
 
-  //owner: req.payload._id,
+  const { owner } = req.payload._id;
 
-  List.create({ title, description, date, products })
+  List.create({ title, description, date, products, owner })
     .then((response) => res.status(201).json(response))
     .catch((err) => {
       console.log("error creating a new list", err);
