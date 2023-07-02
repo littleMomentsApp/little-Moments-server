@@ -57,7 +57,7 @@ router.get("/lists/:listId", (req, res, next) => {
     });
 });
 
-router.put("/lists/edit/:listId", isAuthenticated, (req, res, next) => {
+router.put("/lists/:listId", (req, res, next) => {
   const { listId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(listId)) {
@@ -72,7 +72,9 @@ router.put("/lists/edit/:listId", isAuthenticated, (req, res, next) => {
   List.findByIdAndUpdate(
     listId,
     { title, description, data, products },
-    { returnDocument: "after" }
+    {
+      new: true,
+    }
   )
     .then((response) => {
       res.json(response);
