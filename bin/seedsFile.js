@@ -8,9 +8,8 @@ const listsTemplate = [
     description: "Lorem Ipsum",
     date: "10/12/2023",
     products: [
-      "Nappie",
-      "Comb",
-      "Plaster",
+      "Baby Comb",
+      "Plaster for Kids",
       "Baby Carrier",
       "Baby Stroller",
       "Baby Shampoo",
@@ -22,9 +21,8 @@ const listsTemplate = [
     description: "Lorem Ipsum",
     date: "10/12/2023",
     products: [
-      "Nappie",
-      "Comb",
-      "Plaster",
+      "Baby Comb",
+      "Plaster for Kids",
       "Water Bottle",
       "Baby Wipes",
       "Baby Lotion",
@@ -37,9 +35,8 @@ const listsTemplate = [
     description: "Lorem Ipsum",
     date: "10/12/2023",
     products: [
-      "Nappie",
-      "Comb",
-      "Plaster",
+      "Baby Comb",
+      "Plaster for Kids",
       "Water Bottle",
       "Baby Blanket",
       "Baby Shampoo",
@@ -100,7 +97,6 @@ const genericProducts = [
     category: "Hygiene",
     price: 10,
   },
-  // Add more objects here...
   {
     title: "Baby Onesies",
     image: "onesies.jpg",
@@ -153,6 +149,7 @@ async function seedData() {
       };
       for (const product of listObj.products) {
         const productsDetails = await Product.findOne({ title: product });
+        console.log;
         newList.products.push(productsDetails._id);
       }
 
