@@ -57,7 +57,7 @@ router.get("/lists/:listId", (req, res, next) => {
     });
 });
 
-router.put("/lists/:listId", (req, res, next) => {
+router.put("/lists/:listId",isAuthenticated, (req, res, next) => {
   const { listId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(listId)) {
@@ -85,7 +85,7 @@ router.put("/lists/:listId", (req, res, next) => {
     });
 });
 
-router.delete("/lists/:listId", (req, res, next) => {
+router.delete("/lists/:listId",isAuthenticated, (req, res, next) => {
   const { listId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(listId)) {
@@ -96,12 +96,9 @@ router.delete("/lists/:listId", (req, res, next) => {
   List.findByIdAndDelete(listId)
     .then((deletedList) => {
       console.log(deletedList);
-      return Product.deleteMany({ _id: { $in: deletedList.products } });
-    })
-    .then(() => {
       res.json({
         message: `List with id: ${listId} & all associated products were removed successfully.`,
-      });
+    })
     })
     .catch((err) => {
       console.log(" error to delete list", err);
