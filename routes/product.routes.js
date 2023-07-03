@@ -71,11 +71,14 @@ router.delete("/products/:productId", (req, res, next) => {
     return;
   }
 
-  Product.findByIdAndDelete(productId)
+  Product.findByIdAndRemove(productId)
     .then((deletedProduct) => {
       console.log(deletedProduct);
+      return Product.deleteMany({_id: {$in: deletedProduct}})
+    })
+    .then(()=> {
       res.json({
-        message: `Product with id: ${productId} deleted successfully.`,
+        message: `Product with id: ${productId} deleted successfully.`
     })
     })
     .catch((err) => {

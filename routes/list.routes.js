@@ -57,26 +57,27 @@ router.get("/lists/:listId", (req, res, next) => {
     });
 });
 
-router.put("/lists/:listId", (req, res, next) => {
+router.put("/lists/:listId", isAuthenticated, (req, res, next) => {
   const { listId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(listId)) {
     res.status(400).json({ message: "Specified id is not valid" });
     return;
   }
-
-  const { title, description, data, products } = req.body;
+  console.log(req.body);
+  const { title, description, data, addedProducts } = req.body;
 
   // Model.findByIdAndUpdate(id, newDetails [, options] )
 
   List.findByIdAndUpdate(
     listId,
-    { title, description, data, products },
-    // {
-    //   new: true,
-    // }
+    { title, description, data, products: addedProducts },
+    {
+      new: true,
+    }
   )
     .then((response) => {
+      console.log(response);
       res.json(response);
     })
     .catch((err) => {
@@ -85,7 +86,7 @@ router.put("/lists/:listId", (req, res, next) => {
     });
 });
 
-router.delete("/lists/:listId",isAuthenticated, (req, res, next) => {
+router.delete("/lists/:listId", isAuthenticated, (req, res, next) => {
   const { listId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(listId)) {
@@ -98,7 +99,7 @@ router.delete("/lists/:listId",isAuthenticated, (req, res, next) => {
       console.log(deletedList);
       res.json({
         message: `List with id: ${listId} & all associated products were removed successfully.`,
-    })
+      });
     })
     .catch((err) => {
       console.log(" error to delete list", err);
