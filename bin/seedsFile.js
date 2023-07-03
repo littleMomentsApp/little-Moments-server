@@ -4,53 +4,132 @@ const List = require("../models/List.model");
 
 const listsTemplate = [
   {
-    title: "List Template 1",
+    title: "Template 1",
     description: "Lorem Ipsum",
     date: "10/12/2023",
-    products: ["Nappie", "Comb", "Plaster"],
+    products: [
+      "Nappie",
+      "Comb",
+      "Plaster",
+      "Baby Carrier",
+      "Baby Stroller",
+      "Baby Shampoo",
+      "Baby Wipes",
+    ],
   },
   {
-    title: "List Template 2",
+    title: "Template 2",
     description: "Lorem Ipsum",
     date: "10/12/2023",
-    products: ["Nappie", "Comb", "Plaster", "Water Bottle"],
+    products: [
+      "Nappie",
+      "Comb",
+      "Plaster",
+      "Water Bottle",
+      "Baby Wipes",
+      "Baby Lotion",
+      "Baby Onesies",
+      "Baby Blanket",
+    ],
   },
   {
-    title: "List Template 3",
+    title: "Template 3",
     description: "Lorem Ipsum",
     date: "10/12/2023",
-    products: ["Nappie", "Comb", "Plaster", "Water Bottle"],
+    products: [
+      "Nappie",
+      "Comb",
+      "Plaster",
+      "Water Bottle",
+      "Baby Blanket",
+      "Baby Shampoo",
+      "Baby Carrier",
+    ],
   },
 ];
 
 const genericProducts = [
   {
-    title: "Nappie",
-    image: "test",
-    description: "Nappie for babys",
-    Category: "Hygiene",
-    price: 30,
-  },
-  {
-    title: "Comb",
-    image: "test",
+    title: "Baby Comb",
+    image: "babycomb.jpg",
     description: "Make your baby's hair look good.",
     Category: "Hygiene",
     Price: 20,
   },
   {
-    title: "Plaster",
-    image: "11",
+    title: "Plaster for Kids",
+    image: "plasterkids.jpg",
     description: "Take Care of our babys",
     Category: "Hygiene",
     price: 25,
   },
   {
     title: "Water Bottle",
-    image: "12",
+    image: "waterbottle.jpg",
     description: "Our water personalized water bottle",
     Category: "Hygiene",
     price: 10,
+  },
+  {
+    title: "Baby Diapers",
+    image: "diapers.jpg",
+    description: "Keep your baby dry and comfortable with these diapers.",
+    category: "Hygiene",
+    price: 15,
+  },
+  {
+    title: "Baby Wipes",
+    image: "wipes.jpg",
+    description:
+      "Gentle and soft wipes for cleaning your baby's delicate skin.",
+    category: "Hygiene",
+    price: 8,
+  },
+  {
+    title: "Baby Shampoo",
+    image: "shampoo.jpg",
+    description: "A mild and tear-free shampoo for your baby's hair.",
+    category: "Hygiene",
+    price: 12,
+  },
+  {
+    title: "Baby Lotion",
+    image: "lotion.jpg",
+    description:
+      "Keep your baby's skin moisturized and smooth with this lotion.",
+    category: "Hygiene",
+    price: 10,
+  },
+  // Add more objects here...
+  {
+    title: "Baby Onesies",
+    image: "onesies.jpg",
+    description: "Cute and comfortable onesies for your little one.",
+    category: "Clothing",
+    price: 18,
+  },
+  {
+    title: "Baby Blanket",
+    image: "blanket.jpg",
+    description: "Keep your baby warm and cozy with this soft blanket.",
+    category: "Bedding",
+    price: 25,
+  },
+  {
+    title: "Baby Stroller",
+    image: "stroller.jpg",
+    description:
+      "A convenient and lightweight stroller for easy travel with your baby.",
+    category: "Travel",
+    price: 150,
+  },
+  {
+    title: "Baby Carrier",
+    image: "carrier.jpg",
+    description:
+      "Keep your baby close and secure with this comfortable carrier.",
+    category: "Travel",
+    price: 40,
   },
 ];
 
