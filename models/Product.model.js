@@ -5,11 +5,14 @@ const productSchema = new Schema(
     title: {
       type: String,
     },
-    image: {
+    imageURL: {
       type: String,
     },
     description: {
       type: String,
+    },
+    quantity: {
+      type: Number,
     },
     category: {
       type: String,

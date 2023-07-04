@@ -5,12 +5,14 @@ const List = require("../models/List.model");
 const { default: mongoose } = require("mongoose");
 
 router.post("/products", (req, res, next) => {
-  const { title, description, image, price } = req.body;
+  const { title, image, description, quantity, category, price } = req.body;
 
   const newProduct = {
     title: title,
-    image: image,
+    imageURL: image,
     description: description,
+    quantity: quantity,
+    category: category,
     price: price,
   };
 
@@ -39,28 +41,29 @@ router.get("/products", (req, res, next) => {
     });
 });
 
-router.put("/products/:productId",(req, res, next) =>{
-  const {productId} = req.params;
+router.put("/products/:productId", (req, res, next) => {
+  const { productId } = req.params;
   console.log(productId);
   if (!mongoose.Types.ObjectId.isValid(productId)) {
-    res.status(400).json({message: "Specified id is not valid"})
-    return
+    res.status(400).json({ message: "Specified id is not valid" });
+    return;
   }
-  const {title, image, description, category, price} = req.body;
+  const { title, image, description, quantity, category, price } = req.body;
 
   Product.findByIdAndUpdate(
     productId,
-    {title, image, description, category, price},
+    { title, image, description, quantity, category, price },
     {
-      new:true,
-    })
-    .then((response) =>{
-      res.json(response)
+      new: true,
+    }
+  )
+    .then((response) => {
+      res.json(response);
     })
     .catch((err) => {
       console.log("error updating product", err);
       res.status(500).json({ message: "error updating product", error: err });
-});
+    });
 });
 
 router.delete("/products/:productId", (req, res, next) => {
@@ -74,12 +77,12 @@ router.delete("/products/:productId", (req, res, next) => {
   Product.findByIdAndRemove(productId)
     .then((deletedProduct) => {
       console.log(deletedProduct);
-      return Product.deleteMany({_id: {$in: deletedProduct}})
+      return Product.deleteMany({ _id: { $in: deletedProduct } });
     })
-    .then(()=> {
+    .then(() => {
       res.json({
-        message: `Product with id: ${productId} deleted successfully.`
-    })
+        message: `Product with id: ${productId} deleted successfully.`,
+      });
     })
     .catch((err) => {
       console.log(" error to delete product", err);
