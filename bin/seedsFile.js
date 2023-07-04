@@ -48,21 +48,23 @@ const listsTemplate = [
 const genericProducts = [
   {
     title: "Baby Comb",
-    image: "babycomb.jpg",
+    image: "https://img.fruugo.com/product/3/73/815613733_max.jpg",
     description: "Make your baby's hair look good.",
     Category: "Hygiene",
     Price: 20,
   },
   {
     title: "Plaster for Kids",
-    image: "plasterkids.jpg",
+    image:
+      "https://images-1.eucerin.com/~/media/hansaplast/international/packshot-visuals/animal-plaster/kids%20animal%20plasters%20strips%20overview.png?rx=0&ry=0&rw=1890&rh=1890",
     description: "Take Care of our babys",
     Category: "Hygiene",
     price: 25,
   },
   {
     title: "Water Bottle",
-    image: "waterbottle.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/07/11/23/00/bottle-841431_1280.jpg",
     description: "Our water personalized water bottle",
     Category: "Hygiene",
     price: 10,
