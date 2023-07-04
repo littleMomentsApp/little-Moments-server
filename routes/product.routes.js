@@ -59,6 +59,7 @@ router.put("/products/:productId", (req, res, next) => {
   )
     .then((response) => {
       res.json(response);
+      console.log(response);
     })
     .catch((err) => {
       console.log("error updating product", err);
