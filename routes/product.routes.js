@@ -41,6 +41,12 @@ router.get("/products", (req, res, next) => {
     });
 });
 
+router.get("/product-category", (req, res, next) => {
+  const categories = Product.schema.path("category").enumValues;
+
+  res.json(categories);
+});
+
 router.put("/products/:productId", (req, res, next) => {
   const { productId } = req.params;
   console.log(productId);
