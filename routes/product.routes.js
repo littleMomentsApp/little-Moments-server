@@ -3,13 +3,14 @@ const router = require("express").Router();
 const Product = require("../models/Product.model");
 const List = require("../models/List.model");
 const { default: mongoose } = require("mongoose");
+const fileUploader = require("../config/cloudinary.config");
 
 router.post("/products", (req, res, next) => {
-  const { title, image, description, quantity, category, price } = req.body;
+  const { title, imageURL, description, quantity, category, price } = req.body;
 
   const newProduct = {
     title: title,
-    imageURL: image,
+    imageURL: imageURL,
     description: description,
     quantity: quantity,
     category: category,
@@ -28,7 +29,15 @@ router.post("/products", (req, res, next) => {
 });
 
 router.get("/products", (req, res, next) => {
-  Product.find()
+  let category = req.query.category;
+
+  console.log(category);
+  let filter = {};
+
+  if (category) {
+    filter = { category: category };
+  }
+  Product.find(filter)
     .then((products) => {
       res.json(products);
     })
@@ -39,6 +48,20 @@ router.get("/products", (req, res, next) => {
         error: err,
       });
     });
+});
+
+router.post("/upload", fileUploader.single("imageURL"), (req, res, next) => {
+  // console.log("file is: ", req.file)
+
+  if (!req.file) {
+    next(new Error("No file uploaded!"));
+    return;
+  }
+
+  // Get the URL of the uploaded file and send it as a response.
+  // 'fileUrl' can be any name, just make sure you remember to use the same when accessing it on the frontend
+
+  res.json({ fileUrl: req.file.path });
 });
 
 router.get("/product-category", (req, res, next) => {
