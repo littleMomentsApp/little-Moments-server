@@ -29,15 +29,7 @@ router.post("/products", (req, res, next) => {
 });
 
 router.get("/products", (req, res, next) => {
-  let category = req.query.category;
-
-  console.log(category);
-  let filter = {};
-
-  if (category) {
-    filter = { category: category };
-  }
-  Product.find(filter)
+  Product.find()
     .then((products) => {
       res.json(products);
     })
