@@ -48,7 +48,7 @@ const listsTemplate = [
 const genericProducts = [
   {
     title: "Baby Comb",
-    imageURL: "https://img.fruugo.com/product/3/73/815613733_max.jpg",
+    imageURL: "https://onedrive.live.com/embed?resid=1EB0A0C4E9BC003D%21165377&authkey=%21AGGoSz02i8VNXRY&width=1600&height=1600",
     description: "Make your baby's hair look good.",
     quantity: 50,
     category: "Hygiene",
@@ -57,7 +57,7 @@ const genericProducts = [
   {
     title: "Plaster for Kids",
     imageURL:
-      "https://images-1.eucerin.com/~/media/hansaplast/international/packshot-visuals/animal-plaster/kids%20animal%20plasters%20strips%20overview.png?rx=0&ry=0&rw=1890&rh=1890",
+      "https://onedrive.live.com/embed?resid=1EB0A0C4E9BC003D%21165376&authkey=%21AGpvqYGfhqgE0kQ&width=1890&height=1890",
     description: "Take Care of our babys",
     quantity: 50,
     category: "Baby Essentials",
@@ -122,7 +122,7 @@ const genericProducts = [
   {
     title: "Baby Blanket",
     imageURL:
-      "https://res.cloudinary.com/dctxow0kh/image/upload/v1688720525/baby_blanket_vbs1xg.webp",
+      "https://onedrive.live.com/embed?resid=1EB0A0C4E9BC003D%21165375&authkey=%21AMCiVSlQZz2sArE&width=869&height=1024",
     description: "Keep your baby warm and cozy with this soft blanket.",
     quantity: 50,
     category: "Bedding",
