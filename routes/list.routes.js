@@ -8,7 +8,7 @@ const { isAuthenticated } = require("../middleware/jwt.middleware");
 
 router.post("/lists", isAuthenticated, (req, res, next) => {
   const { title, description, date, products } = req.body;
-
+  console.log({ title, description, date, products });
   const { owner } = req.payload._id;
 
   List.create({ title, description, date, products, owner })

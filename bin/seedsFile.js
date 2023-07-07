@@ -6,7 +6,7 @@ const listsTemplate = [
   {
     title: "Template 1",
     description: "Lorem Ipsum",
-    date: "10/12/2023",
+    date: "2023-10-11",
     products: [
       "Baby Comb",
       "Plaster for Kids",
@@ -19,7 +19,7 @@ const listsTemplate = [
   {
     title: "Template 2",
     description: "Lorem Ipsum",
-    date: "10/12/2023",
+    date: "2023-10-11",
     products: [
       "Baby Comb",
       "Plaster for Kids",
@@ -33,7 +33,7 @@ const listsTemplate = [
   {
     title: "Template 3",
     description: "Lorem Ipsum",
-    date: "10/12/2023",
+    date: "2023-10-11",
     products: [
       "Baby Comb",
       "Plaster for Kids",
@@ -51,8 +51,8 @@ const genericProducts = [
     imageURL: "https://img.fruugo.com/product/3/73/815613733_max.jpg",
     description: "Make your baby's hair look good.",
     quantity: 50,
-    Category: "Hygiene",
-    Price: 20,
+    category: "Hygiene",
+    price: 15,
   },
   {
     title: "Plaster for Kids",
@@ -60,7 +60,7 @@ const genericProducts = [
       "https://images-1.eucerin.com/~/media/hansaplast/international/packshot-visuals/animal-plaster/kids%20animal%20plasters%20strips%20overview.png?rx=0&ry=0&rw=1890&rh=1890",
     description: "Take Care of our babys",
     quantity: 50,
-    Category: "Hygiene",
+    category: "Baby Essentials",
     price: 25,
   },
   {
@@ -69,12 +69,13 @@ const genericProducts = [
       "https://cdn.pixabay.com/photo/2015/07/11/23/00/bottle-841431_1280.jpg",
     description: "Our water personalized water bottle",
     quantity: 50,
-    Category: "Hygiene",
+    category: "Hygiene",
     price: 10,
   },
   {
     title: "Baby Diapers",
-    imageURL: "diapers.jpg",
+    imageURL:
+      "https://res.cloudinary.com/dctxow0kh/image/upload/v1688720525/Baby_Diapers_drjha8.jpg",
     description: "Keep your baby dry and comfortable with these diapers.",
     quantity: 50,
     category: "Hygiene",
@@ -82,7 +83,8 @@ const genericProducts = [
   },
   {
     title: "Baby Wipes",
-    imageURL: "wipes.jpg",
+    imageURL:
+      "https://res.cloudinary.com/dctxow0kh/image/upload/v1688720885/baby_wipes_d2sacj.jpg",
     description:
       "Gentle and soft wipes for cleaning your baby's delicate skin.",
     quantity: 50,
@@ -91,24 +93,27 @@ const genericProducts = [
   },
   {
     title: "Baby Shampoo",
-    imageURL: "shampoo.jpg",
+    imageURL:
+      "https://res.cloudinary.com/dctxow0kh/image/upload/v1688720525/baby_shampoo_ioauib.jpg",
     description: "A mild and tear-free shampoo for your baby's hair.",
     quantity: 50,
-    category: "Hygiene",
+    category: "Baby Essentials",
     price: 12,
   },
   {
     title: "Baby Lotion",
-    imageURL: "lotion.jpg",
+    imageURL:
+      "https://res.cloudinary.com/dctxow0kh/image/upload/v1688720525/baby_lotion_umnucw.webp",
     description:
       "Keep your baby's skin moisturized and smooth with this lotion.",
     quantity: 50,
-    category: "Hygiene",
+    category: "Baby Essentials",
     price: 10,
   },
   {
     title: "Baby Onesies",
-    imageURL: "onesies.jpg",
+    imageURL:
+      "https://res.cloudinary.com/dctxow0kh/image/upload/v1688720525/baby_onesies_jzal7w.jpg",
     description: "Cute and comfortable onesies for your little one.",
     quantity: 50,
     category: "Clothing",
@@ -116,7 +121,8 @@ const genericProducts = [
   },
   {
     title: "Baby Blanket",
-    imageURL: "blanket.jpg",
+    imageURL:
+      "https://res.cloudinary.com/dctxow0kh/image/upload/v1688720525/baby_blanket_vbs1xg.webp",
     description: "Keep your baby warm and cozy with this soft blanket.",
     quantity: 50,
     category: "Bedding",
@@ -124,7 +130,8 @@ const genericProducts = [
   },
   {
     title: "Baby Stroller",
-    imageURL: "stroller.jpg",
+    imageURL:
+      "https://res.cloudinary.com/dctxow0kh/image/upload/v1688720525/baby_stroller_y2vpke.webp",
     description:
       "A convenient and lightweight stroller for easy travel with your baby.",
     quantity: 50,
@@ -133,7 +140,8 @@ const genericProducts = [
   },
   {
     title: "Baby Carrier",
-    imageURL: "carrier.jpg",
+    imageURL:
+      "https://res.cloudinary.com/dctxow0kh/image/upload/v1688720525/baby_carrier_qhonc7.webp",
     description:
       "Keep your baby close and secure with this comfortable carrier.",
     quantity: 50,
